@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Course | Utopian Studies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.videos-section{background:var(--parchment);padding:4rem 0}
+.videos-inner{max-width:1100px;margin:0 auto;padding:0 4rem}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem;margin-top:2rem}
+.video-card{background:var(--white);border:1px solid var(--parchment-border);cursor:pointer;transition:transform 0.2s,box-shadow 0.2s}
+.video-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,22,18,0.12)}
+.video-thumb{position:relative;aspect-ratio:16/9;background:var(--ink);overflow:hidden}
+.video-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.video-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,22,18,0.35);opacity:0;transition:opacity 0.2s}
+.video-card:hover .video-play{opacity:1}
+.video-play-btn{width:54px;height:54px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--ink);padding-left:5px}
+.video-info{padding:1rem 1.2rem 1.4rem;display:flex;align-items:flex-start;gap:1rem}
+.video-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:400;color:var(--parchment-border);line-height:1;flex-shrink:0;min-width:2.5rem}
+.video-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--ink-mid);line-height:1.4;padding-top:0.3rem}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,8,6,0.93);z-index:1000;align-items:center;justify-content:center;padding:2rem}
+.modal-overlay.open{display:flex}
+.modal-inner{width:100%;max-width:900px;position:relative}
+.modal-close{position:absolute;top:-2.8rem;right:0;background:none;border:none;color:rgba(240,233,216,0.5);font-size:1.6rem;cursor:pointer;padding:0.3rem 0.6rem;line-height:1;transition:color 0.2s}
+.modal-close:hover{color:var(--gold)}
+.modal-video{aspect-ratio:16/9;width:100%;background:#000}
+.modal-video iframe{width:100%;height:100%;border:none;display:block}
+.modal-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);margin-top:1rem;font-weight:400;line-height:1.4;opacity:0.85}
+@media(max-width:900px){.videos-inner{padding:0 1.5rem}.video-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}}
+@media(max-width:540px){.video-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="index.html" data-t="nav_brand"><img src="images/logo.jpg" alt="Utopia Printing Press logo" class="nav-logo">Utopian Studies</a>
+  <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+  <ul class="nav-links">
+    <li><a href="index.html" data-t="nav_home">Home</a></li>
+    <li><a href="course.html" class="active" data-t="nav_course">Course</a></li>
+    <li><a href="about.html" data-t="nav_research">Research</a></li>
+    <li><a href="books.html" data-t="nav_books">Books</a></li>
+    <li><a href="enroll.html" class="nav-enroll" data-t="nav_enroll">Enroll &rarr;</a></li>
+    <li><button id="lang-toggle-btn" onclick="toggleLang()" class="lang-btn">አማርኛ</button></li>
+  </ul>
+</nav>
+
+<div class="page-hero-dark">
+  <div class="section">
+    <div class="section-label" style="color:var(--gold)" data-t="course_label">Utopian Studies &middot; Course Curriculum</div>
+    <h1 class="page-hero-title" data-t="course_title">Course Lessons</h1>
+    <p class="page-hero-desc" data-t="course_desc">Watch each lesson in order. Click any video to play it directly on this page.</p>
+  </div>
+</div>
+<div class="gold-divider"></div>
+
+<div class="lessons-bg" style="padding:4rem 0">
+  <div class="lessons-inner">
+    <div class="what-youll-learn">
+      <h2 class="section-title" style="color:var(--white);margin-bottom:1.5rem" data-t="course_learn_title">What you'll learn</h2>
+      <ul class="learn-bullets">
+        <li data-t="course_bullet1">The origins and history of utopian writing and "blueprint" societies</li>
+        <li data-t="course_bullet2">Major works such as <em>Utopia</em> (1516) and <em>City of the Sun</em> (1603)</li>
+        <li data-t="course_bullet3">Utopianism, identity, and civilization — especially in the Ethiopian historical context</li>
+        <li data-t="course_bullet4">How utopian ideas relate to modern cultural, political, and educational challenges</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="videos-section">
+  <div class="videos-inner">
+    <div class="section-label" data-t="course_vid_label">12 lessons &middot; watch in order</div>
+    <h2 class="section-title" data-t="course_vid_title">All <em>Lessons</em></h2>
+    <div class="video-grid">
+      <div class="video-card" onclick="openVideo('P5Nzrb090V8', document.querySelector('[data-vid=\'vid_00\']').textContent)">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/P5Nzrb090V8/mqdefault.jpg" alt="Introduction" loading="lazy">
+          <div class="video-play"><div class="video-play-btn">&#9654;</div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-num">00</div>
+          <div class="video-title" data-t="vid_00" data-vid="vid_00">Introduction</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('4nxNKcN9nO4', document.querySelector('[data-vid=\'vid_q\']').textContent)">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/4nxNKcN9nO4/mqdefault.jpg" alt="Questions and Answers" loading="lazy">
+          <div class="video-play"><div class="video-play-btn">&#9654;</div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-num">Q</div>
+          <div class="video-title" data-t="vid_q" data-vid="vid_q">Questions &amp; Answers</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('BnGG-4rpj6A', document.querySelector('[data-vid=\'vid_1a\']').textContent)">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/BnGG-4rpj6A/mqdefault.jpg" alt="Lesson 1A" loading="lazy">
+          <div class="video-play"><div class="video-play-btn">&#9654;</div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-num">1A</div>
+          <div class="video-title" data-t="vid_1a" data-vid="vid_1a">Lesson 1A</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('tdwHnMRF7zA', document.querySelector('[data-vid=\'vid_1b\']').textContent)">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/tdwHnMRF7zA/mqdefault.jpg" alt="Lesson 1B" loading="lazy">
+          <div class="video-play"><div class="video-play-btn">&#9654;</div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-num">1B</div>
+          <div class="video-title" data-t="vid_1b" data-vid="vid_1b">Lesson 1B</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('7Eeuf8ZmhSU', document.querySelector('[data-vid=\'vid_1c\']').textContent)">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/7Eeuf8ZmhSU/mqdefault.jpg" alt="Lesson 1C" loading="lazy">
+          <div class="video-play"><div class="video-play-btn">&#9654;</div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-num">1C</div>
+          <div class="video-title" data-t="vid_1c" data-vid="vid_1c">Lesson 1C</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('6qbU6nrVIA4', document.querySelector('[data-vid=\'vid_02\']').textContent)">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/6qbU6nrVIA4/mqdefault.jpg" alt="Lesson 2" loading="lazy">
+          <div class="video-play"><div class="video-play-btn">&#9654;</div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-num">02</div>
+          <div class="video-title" data-t="vid_02" data-vid="vid_02">Lesson 2</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('m9d4A-0UIFE', document.querySelector('[data-vid=\'vid_03\']').textContent)">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/m9d4A-0UIFE/mqdefault.jpg" alt="Lesson 3" loading="lazy">
+          <div class="video-play"><div class="video-play-btn">&#9654;</div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-num">03</div>
+          <div class="video-title" data-t="vid_03" data-vid="vid_03">Lesson 3</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('eJfHhuapKiw', document.querySelector('[data-vid=\'vid_04\']').textContent)">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/eJfHhuapKiw/mqdefault.jpg" alt="Lesson 4" loading="lazy">
+          <div class="video-play"><div class="video-play-btn">&#9654;</div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-num">04</div>
+          <div class="video-title" data-t="vid_04" data-vid="vid_04">Lesson 4</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('MBAtVCsLe5I', document.querySelector('[data-vid=\'vid_05\']').textContent)">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/MBAtVCsLe5I/mqdefault.jpg" alt="Lesson 5" loading="lazy">
+          <div class="video-play"><div class="video-play-btn">&#9654;</div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-num">05</div>
+          <div class="video-title" data-t="vid_05" data-vid="vid_05">Lesson 5</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('PmvrsqS6RqQ', document.querySelector('[data-vid=\'vid_06\']').textContent)">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/PmvrsqS6RqQ/mqdefault.jpg" alt="Lesson 6" loading="lazy">
+          <div class="video-play"><div class="video-play-btn">&#9654;</div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-num">06</div>
+          <div class="video-title" data-t="vid_06" data-vid="vid_06">Lesson 6</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('YiEJMNKkRFU', document.querySelector('[data-vid=\'vid_07\']').textContent)">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/YiEJMNKkRFU/mqdefault.jpg" alt="Lesson 7" loading="lazy">
+          <div class="video-play"><div class="video-play-btn">&#9654;</div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-num">07</div>
+          <div class="video-title" data-t="vid_07" data-vid="vid_07">Lesson 7</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('nnl5vXu4HHg', document.querySelector('[data-vid=\'vid_08\']').textContent)">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/nnl5vXu4HHg/mqdefault.jpg" alt="Lesson 8" loading="lazy">
+          <div class="video-play"><div class="video-play-btn">&#9654;</div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-num">08</div>
+          <div class="video-title" data-t="vid_08" data-vid="vid_08">Lesson 8</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;text-align:center">
+      <a class="btn-outline" href="https://www.youtube.com/channel/UCU0HSw0Vh1EhM1_XMR0sj8A" target="_blank" rel="noopener"
+         style="border-color:rgba(138,110,47,0.5);color:var(--ink-soft)" data-t="course_yt_btn">
+        View channel on YouTube &rarr;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-inner">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-video">
+      <iframe id="modal-iframe" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+    <div class="modal-title" id="modal-title"></div>
+  </div>
+</div>
+
+<div style="background:var(--parchment-dark);border-top:1px solid var(--parchment-border)">
+  <div style="max-width:1100px;margin:0 auto;padding:3rem 4rem;text-align:center">
+    <a class="btn-dark" href="enroll.html" data-t="course_enroll_btn">Register / Enroll to receive updates &rarr;</a>
+  </div>
+</div>
+
+
+<div class="social-bar">
+  <div class="social-inner">
+    <div class="social-links">
+      <a href="https://www.facebook.com/meskerem.l.debele/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        <span>Facebook</span>
+      </a>
+      <a href="https://www.youtube.com/channel/UCU0HSw0Vh1EhM1_XMR0sj8A" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+        <span>YouTube</span>
+      </a>
+      <a href="https://t.me/Utopiaprintingpress" target="_blank" rel="noopener" class="social-link" aria-label="Telegram Channel">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 7.057l-1.68 7.921c-.125.558-.453.694-.917.432l-2.54-1.873-1.226 1.18c-.135.135-.25.25-.512.25l.183-2.584 4.705-4.25c.204-.183-.045-.283-.316-.1L8.145 14.71l-2.503-.782c-.544-.17-.555-.544.114-.805l9.773-3.768c.453-.163.85.112.4 1.702z"/></svg>
+        <span>Telegram</span>
+      </a>
+      <a href="https://www.researchgate.net/profile/Meskerem-Debele" target="_blank" rel="noopener" class="social-link" aria-label="ResearchGate">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 00-.112.437 8.365 8.365 0 00-.078.53 9 9 0 00-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 00.014 1.017 9 9 0 00.05.727 7.946 7.946 0 00.077.53 3.193 3.193 0 00.113.436c.242.744.65 1.303 1.213 1.68.565.376 1.255.564 2.073.564.737 0 1.398-.148 1.985-.44a3.396 3.396 0 001.388-1.218c.348-.523.521-1.148.521-1.877v-.84H19.63v.84c0 .545-.115.96-.345 1.246-.23.288-.558.43-.985.43-.427 0-.756-.142-.985-.43-.23-.287-.344-.7-.344-1.246V5.368c0-.568.112-.995.336-1.282.225-.287.557-.43.993-.43.427 0 .754.143.985.43.23.287.345.714.345 1.282v.839h1.879v-.84c0-.728-.174-1.353-.521-1.876A3.396 3.396 0 0021.57.44C20.984.148 20.323 0 19.586 0zM1.453 .089v23.823H3.93v-9.913h2.014c.96 0 1.815-.19 2.56-.566a4.116 4.116 0 001.742-1.63c.416-.706.624-1.548.624-2.523 0-.975-.208-1.817-.624-2.523A4.116 4.116 0 007.504.657C6.759.281 5.904.089 4.944.089zm2.478 2.014h.933c.883 0 1.578.228 2.085.684.506.456.76 1.09.76 1.903 0 .812-.254 1.446-.76 1.902-.507.456-1.202.684-2.085.684H3.93z"/></svg>
+        <span>ResearchGate</span>
+      </a>
+      <a href="https://www.goodreads.com/author/show/22308841.Dr_Meskerem_Lechissa" target="_blank" rel="noopener" class="social-link" aria-label="Goodreads">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.43 23.992c-2.111 0-3.998-.498-5.661-1.494a10.392 10.392 0 01-3.846-4.035C.975 16.95.5 15.124.5 13.007c0-2.145.472-4.026 1.415-5.644.942-1.617 2.234-2.88 3.875-3.787C7.431 2.67 9.306 2.216 11.43 2.216c2.111 0 3.993.458 5.647 1.374 1.654.917 2.945 2.18 3.875 3.787.93 1.608 1.395 3.43 1.395 5.467 0 2.118-.465 3.994-1.395 5.628-.93 1.635-2.22 2.912-3.875 3.828-1.654.917-3.536 1.375-5.647 1.375v.317zm-.26-3.83c1.39 0 2.61-.33 3.663-.99 1.053-.66 1.862-1.573 2.427-2.738.565-1.165.847-2.487.847-3.968 0-1.497-.28-2.82-.847-3.968-.565-1.148-1.374-2.053-2.427-2.713-1.053-.66-2.274-.99-3.663-.99-1.39 0-2.61.33-3.663.99C6.454 7.124 5.645 8.03 5.08 9.177c-.565 1.148-.848 2.47-.848 3.968 0 1.481.283 2.803.848 3.968.565 1.165 1.374 2.077 2.427 2.738 1.053.66 2.274.99 3.663.99z"/></svg>
+        <span>Goodreads</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand"><img src="images/logo.jpg" alt="Utopia Printing Press logo" class="footer-logo"><span data-t="nav_brand">Utopian Studies</span></div>
+  <p data-t="footer_sub">Video lessons and resources from Dr. Mmeskerem Lechisa</p>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/lang.js"></script>
+<script>
+var modal = document.getElementById('modal');
+var modalIframe = document.getElementById('modal-iframe');
+var modalTitle = document.getElementById('modal-title');
+
+function openVideo(id, title) {
+  modalIframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+  modalTitle.textContent = title;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  modal.classList.remove('open');
+  modalIframe.src = '';
+  document.body.style.overflow = '';
+}
+document.getElementById('modal-close').addEventListener('click', closeModal);
+modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>

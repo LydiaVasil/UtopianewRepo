@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home | Utopian Studies</title>
+<meta name="description" content="Video lessons and resources from Dr. Mmeskerem Lechisa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.telegram-section{background:var(--parchment-dark);border-top:1px solid var(--parchment-border);border-bottom:1px solid var(--parchment-border)}
+.telegram-inner{padding-top:5rem;padding-bottom:5rem}
+.telegram-intro{font-size:1.1rem;color:var(--ink-soft);line-height:1.9;margin-bottom:2.5rem;max-width:620px}
+.telegram-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:var(--parchment-border);border:1.5px solid var(--parchment-border);margin-bottom:3rem}
+.tg-card{background:var(--white);padding:1.8rem 2rem;display:flex;align-items:center;gap:1.5rem;text-decoration:none;transition:background 0.2s}
+.tg-card:hover{background:var(--parchment)}
+.tg-icon{color:#0088cc;flex-shrink:0}
+.tg-info{flex:1}
+.tg-label{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:0.3rem}
+.tg-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink-mid);margin-bottom:0.3rem}
+.tg-desc{font-size:0.9rem;color:var(--ink-soft);line-height:1.5}
+.tg-arrow{color:var(--gold);font-size:1.3rem;opacity:0.5;transition:opacity 0.2s,transform 0.2s;flex-shrink:0}
+.tg-card:hover .tg-arrow{opacity:1;transform:translateX(4px)}
+.tg-embed-wrap{max-width:540px}
+@media(max-width:700px){.telegram-cards{grid-template-columns:1fr}.tg-embed-wrap{max-width:100%}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html" data-t="nav_brand"><img src="images/logo.jpg" alt="Utopia Printing Press logo" class="nav-logo">Utopian Studies</a>
+  <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active" data-t="nav_home">Home</a></li>
+    <li><a href="course.html" data-t="nav_course">Course</a></li>
+    <li><a href="about.html" data-t="nav_research">Research</a></li>
+    <li><a href="books.html" data-t="nav_books">Books</a></li>
+    <li><a href="enroll.html" class="nav-enroll" data-t="nav_enroll">Enroll &rarr;</a></li>
+    <li><button id="lang-toggle-btn" onclick="toggleLang()" class="lang-btn">አማርኛ</button></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-ornament"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-t="hero_eyebrow">Utopian Studies &middot; Dr. Mmeskerem Lechisa</div>
+    <div class="hero-amharic" data-t="hero_amharic">የዩቶፕያ እሳቤዎች በመጽሐፍ ቅዱስ</div>
+    <h1 class="hero-title" data-t="hero_title"><em>Utopian Thoughts</em><br>in the Bible</h1>
+    <p class="hero-desc" data-t="hero_desc">An interdisciplinary course exploring utopian thought in Scripture and its connections to theology, history, education, and civilization.</p>
+    <p class="hero-author" data-t="hero_author">Taught by Dr. Mmeskerem Lechisa</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="course.html" data-t="hero_btn1">View the Course</a>
+      <a class="btn-outline" href="enroll.html" data-t="hero_btn2">Register / Enroll</a>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<div class="section">
+  <div class="section-label" data-t="learn_label">What you will learn</div>
+  <h2 class="section-title" data-t="learn_title">Explore <em>utopian imagination</em><br>across history &amp; scripture</h2>
+  <div class="learn-grid">
+    <div class="learn-card">
+      <div class="learn-num">01</div>
+      <h3 data-t="learn_1_h">Origins of Utopian Writing</h3>
+      <p data-t="learn_1_p">Trace the history of "blueprint societies" and ideal-world thinking from ancient texts through the Renaissance.</p>
+    </div>
+    <div class="learn-card">
+      <div class="learn-num">02</div>
+      <h3 data-t="learn_2_h">Landmark Works</h3>
+      <p data-t="learn_2_p">Study Thomas More's <em>Utopia</em> (1516) and Campanella's <em>City of the Sun</em> (1603) alongside biblical visions.</p>
+    </div>
+    <div class="learn-card">
+      <div class="learn-num">03</div>
+      <h3 data-t="learn_3_h">Identity &amp; Civilization</h3>
+      <p data-t="learn_3_p">Examine utopianism through the lens of Ethiopian history, culture, and the Habesha intellectual tradition.</p>
+    </div>
+    <div class="learn-card">
+      <div class="learn-num">04</div>
+      <h3 data-t="learn_4_h">Modern Challenges</h3>
+      <p data-t="learn_4_p">Connect ancient ideals to contemporary cultural, political, and educational questions of our time.</p>
+    </div>
+  </div>
+</div>
+
+<div class="format-section">
+  <div class="section format-section-inner">
+    <div class="section-label" data-t="format_label">Course format</div>
+    <h2 class="section-title" data-t="format_title">How the course works</h2>
+    <div class="format-grid">
+      <div class="format-card">
+        <div class="format-icon">&#9654;</div>
+        <h3 data-t="format_1_h">Video Lessons</h3>
+        <p data-t="format_1_p">Each lesson is taught by video, presented consecutively in a clear sequence.</p>
+      </div>
+      <div class="format-card">
+        <div class="format-icon">&#128196;</div>
+        <h3 data-t="format_2_h">Notes &amp; Resources</h3>
+        <p data-t="format_2_p">Companion notes accompany every video, giving you reference material to study.</p>
+      </div>
+      <div class="format-card">
+        <div class="format-icon">&#10000;</div>
+        <h3 data-t="format_3_h">Quizzes</h3>
+        <p data-t="format_3_p">Optional quizzes at the end of each lesson help reinforce your understanding.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="telegram-section">
+  <div class="section telegram-inner">
+    <div class="section-label" data-t="tg_label">Community</div>
+    <h2 class="section-title" data-t="tg_title">Join the <em>conversation</em></h2>
+    <p class="telegram-intro" data-t="tg_intro">አጫጭር ማስታወሻዎችንና ዋቢዎችን ለማግኘት የቴሌግራም ምኅላፉን ይቀላቀሉ</p>
+    <div class="telegram-cards">
+      <a class="tg-card" href="https://t.me/Utopiaprintingpress" target="_blank" rel="noopener">
+        <div class="tg-icon">
+          <svg viewBox="0 0 24 24" fill="none" width="32" height="32"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 7.057l-1.68 7.921c-.125.558-.453.694-.917.432l-2.54-1.873-1.226 1.18c-.135.135-.25.25-.512.25l.183-2.584 4.705-4.25c.204-.183-.045-.283-.316-.1L8.145 14.71l-2.503-.782c-.544-.17-.555-.544.114-.805l9.773-3.768c.453-.163.85.112.4 1.702z" fill="currentColor"/></svg>
+        </div>
+        <div class="tg-info">
+          <div class="tg-label" data-t="tg_1_label">Notes &amp; References</div>
+          <div class="tg-name" data-t="tg_1_name">@Utopiaprintingpress</div>
+          <div class="tg-desc" data-t="tg_1_desc">Short notes and references from each lesson</div>
+        </div>
+        <div class="tg-arrow">&rarr;</div>
+      </a>
+      <a class="tg-card" href="https://t.me/+PyIFdfa0aEAzMmNk" target="_blank" rel="noopener">
+        <div class="tg-icon">
+          <svg viewBox="0 0 24 24" fill="none" width="32" height="32"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 7.057l-1.68 7.921c-.125.558-.453.694-.917.432l-2.54-1.873-1.226 1.18c-.135.135-.25.25-.512.25l.183-2.584 4.705-4.25c.204-.183-.045-.283-.316-.1L8.145 14.71l-2.503-.782c-.544-.17-.555-.544.114-.805l9.773-3.768c.453-.163.85.112.4 1.702z" fill="currentColor"/></svg>
+        </div>
+        <div class="tg-info">
+          <div class="tg-label" data-t="tg_2_label">Discussion Group</div>
+          <div class="tg-name" data-t="tg_2_name">የመወያያ ግሩፕ</div>
+          <div class="tg-desc" data-t="tg_2_desc">Ask questions and discuss with fellow students</div>
+        </div>
+        <div class="tg-arrow">&rarr;</div>
+      </a>
+    </div>
+    <div class="tg-embed-wrap">
+      <div class="section-label" style="margin-bottom:1rem" data-t="tg_embed_label">Latest from the channel</div>
+      <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="Utopiaprintingpress/1" data-width="100%" data-color="C9A84C"></script>
+    </div>
+  </div>
+</div>
+
+<div class="register-section">
+  <h2 data-t="reg_title">Begin your study</h2>
+  <p data-t="reg_desc">Register to receive updates, access information, and join a growing community of students exploring utopian thought.</p>
+  <a class="btn-dark" href="enroll.html" data-t="reg_btn">Register / Enroll Now</a>
+</div>
+
+
+<div class="social-bar">
+  <div class="social-inner">
+    <div class="social-links">
+      <a href="https://www.facebook.com/meskerem.l.debele/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        <span>Facebook</span>
+      </a>
+      <a href="https://www.youtube.com/channel/UCU0HSw0Vh1EhM1_XMR0sj8A" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+        <span>YouTube</span>
+      </a>
+      <a href="https://t.me/Utopiaprintingpress" target="_blank" rel="noopener" class="social-link" aria-label="Telegram Channel">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 7.057l-1.68 7.921c-.125.558-.453.694-.917.432l-2.54-1.873-1.226 1.18c-.135.135-.25.25-.512.25l.183-2.584 4.705-4.25c.204-.183-.045-.283-.316-.1L8.145 14.71l-2.503-.782c-.544-.17-.555-.544.114-.805l9.773-3.768c.453-.163.85.112.4 1.702z"/></svg>
+        <span>Telegram</span>
+      </a>
+      <a href="https://www.researchgate.net/profile/Meskerem-Debele" target="_blank" rel="noopener" class="social-link" aria-label="ResearchGate">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 00-.112.437 8.365 8.365 0 00-.078.53 9 9 0 00-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 00.014 1.017 9 9 0 00.05.727 7.946 7.946 0 00.077.53 3.193 3.193 0 00.113.436c.242.744.65 1.303 1.213 1.68.565.376 1.255.564 2.073.564.737 0 1.398-.148 1.985-.44a3.396 3.396 0 001.388-1.218c.348-.523.521-1.148.521-1.877v-.84H19.63v.84c0 .545-.115.96-.345 1.246-.23.288-.558.43-.985.43-.427 0-.756-.142-.985-.43-.23-.287-.344-.7-.344-1.246V5.368c0-.568.112-.995.336-1.282.225-.287.557-.43.993-.43.427 0 .754.143.985.43.23.287.345.714.345 1.282v.839h1.879v-.84c0-.728-.174-1.353-.521-1.876A3.396 3.396 0 0021.57.44C20.984.148 20.323 0 19.586 0zM1.453 .089v23.823H3.93v-9.913h2.014c.96 0 1.815-.19 2.56-.566a4.116 4.116 0 001.742-1.63c.416-.706.624-1.548.624-2.523 0-.975-.208-1.817-.624-2.523A4.116 4.116 0 007.504.657C6.759.281 5.904.089 4.944.089zm2.478 2.014h.933c.883 0 1.578.228 2.085.684.506.456.76 1.09.76 1.903 0 .812-.254 1.446-.76 1.902-.507.456-1.202.684-2.085.684H3.93z"/></svg>
+        <span>ResearchGate</span>
+      </a>
+      <a href="https://www.goodreads.com/author/show/22308841.Dr_Meskerem_Lechissa" target="_blank" rel="noopener" class="social-link" aria-label="Goodreads">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.43 23.992c-2.111 0-3.998-.498-5.661-1.494a10.392 10.392 0 01-3.846-4.035C.975 16.95.5 15.124.5 13.007c0-2.145.472-4.026 1.415-5.644.942-1.617 2.234-2.88 3.875-3.787C7.431 2.67 9.306 2.216 11.43 2.216c2.111 0 3.993.458 5.647 1.374 1.654.917 2.945 2.18 3.875 3.787.93 1.608 1.395 3.43 1.395 5.467 0 2.118-.465 3.994-1.395 5.628-.93 1.635-2.22 2.912-3.875 3.828-1.654.917-3.536 1.375-5.647 1.375v.317zm-.26-3.83c1.39 0 2.61-.33 3.663-.99 1.053-.66 1.862-1.573 2.427-2.738.565-1.165.847-2.487.847-3.968 0-1.497-.28-2.82-.847-3.968-.565-1.148-1.374-2.053-2.427-2.713-1.053-.66-2.274-.99-3.663-.99-1.39 0-2.61.33-3.663.99C6.454 7.124 5.645 8.03 5.08 9.177c-.565 1.148-.848 2.47-.848 3.968 0 1.481.283 2.803.848 3.968.565 1.165 1.374 2.077 2.427 2.738 1.053.66 2.274.99 3.663.99z"/></svg>
+        <span>Goodreads</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand"><img src="images/logo.jpg" alt="Utopia Printing Press logo" class="footer-logo"><span data-t="nav_brand">Utopian Studies</span></div>
+  <p data-t="footer_sub">Video lessons and resources from Dr. Mmeskerem Lechisa<br>An interdisciplinary course on utopian thought in the Bible</p>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/lang.js"></script>
+</body>
+</html>

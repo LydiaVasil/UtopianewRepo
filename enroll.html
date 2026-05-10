@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register / Enroll | Utopian Studies</title>
+<meta name="description" content="Register or enroll in the Utopian Studies course by Dr. Mmeskerem Lechisa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.enroll-hero{background:var(--ink);padding:4rem 0 3rem;text-align:center}
+.enroll-hero-eyebrow{font-size:0.75rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:1rem}
+.enroll-hero-eyebrow::before,.enroll-hero-eyebrow::after{content:'';display:inline-block;width:40px;height:1px;background:var(--gold)}
+.enroll-hero h1{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:400;color:var(--white);margin-bottom:0.8rem}
+.enroll-hero h1 em{font-style:italic;color:var(--gold-light)}
+.enroll-hero p{color:rgba(240,233,216,0.55);font-size:1.05rem;max-width:500px;margin:0 auto;line-height:1.7}
+
+.form-section{background:var(--parchment);padding:5rem 0}
+.form-wrap{max-width:720px;margin:0 auto;padding:0 2rem}
+
+.form-card{background:var(--white);border:1px solid var(--parchment-border);padding:3rem 3.5rem}
+
+.form-group{margin-bottom:1.8rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.8rem}
+.form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-bottom:1.8rem}
+
+label{display:block;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:0.5rem}
+label .req{color:var(--gold-dark);margin-left:2px}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select{
+  width:100%;
+  padding:0.85rem 1rem;
+  font-family:'Crimson Pro',serif;
+  font-size:1rem;
+  color:var(--ink);
+  background:var(--parchment);
+  border:1px solid var(--parchment-border);
+  border-radius:0;
+  outline:none;
+  transition:border-color 0.2s,background 0.2s;
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus{
+  border-color:var(--gold);
+  background:var(--white);
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder{
+  color:var(--parchment-border);
+}
+
+.select-wrap{position:relative}
+.select-wrap::after{
+  content:'▾';
+  position:absolute;
+  right:1rem;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--gold-dark);
+  pointer-events:none;
+  font-size:0.9rem;
+}
+
+.gender-group{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.gender-option{position:relative}
+.gender-option input[type="radio"]{position:absolute;opacity:0;width:0;height:0}
+.gender-label{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.6rem;
+  padding:0.85rem 1rem;
+  border:1px solid var(--parchment-border);
+  background:var(--parchment);
+  cursor:pointer;
+  font-family:'Crimson Pro',serif;
+  font-size:1rem;
+  color:var(--ink-soft);
+  transition:all 0.2s;
+  user-select:none;
+}
+.gender-label:hover{border-color:var(--gold);color:var(--ink-mid)}
+.gender-option input[type="radio"]:checked + .gender-label{
+  border-color:var(--gold);
+  background:var(--gold);
+  color:var(--ink);
+  font-weight:500;
+}
+
+.form-divider{border:none;border-top:1px solid var(--parchment-border);margin:2.5rem 0}
+
+.submit-btn{
+  width:100%;
+  background:var(--ink);
+  color:var(--gold-light);
+  border:none;
+  padding:1.1rem 2rem;
+  font-family:'Crimson Pro',serif;
+  font-size:1rem;
+  font-weight:500;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background 0.2s,transform 0.15s;
+  margin-top:0.5rem;
+}
+.submit-btn:hover{background:var(--ink-mid);transform:translateY(-1px)}
+.submit-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+
+.form-note{font-size:0.88rem;color:var(--ink-soft);text-align:center;margin-top:1.2rem;font-style:italic;line-height:1.6}
+.required-note{font-size:0.82rem;color:var(--ink-soft);margin-bottom:2rem}
+.required-note span{color:var(--gold-dark)}
+
+/* Success state */
+.success-msg{
+  display:none;
+  text-align:center;
+  padding:3rem 2rem;
+}
+.success-msg.show{display:block}
+.success-icon{font-size:3rem;margin-bottom:1rem;color:var(--gold)}
+.success-msg h2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:400;color:var(--ink);margin-bottom:0.8rem}
+.success-msg p{color:var(--ink-soft);font-size:1.05rem;line-height:1.7}
+
+/* Error msg */
+.field-error{font-size:0.82rem;color:#c0392b;margin-top:0.4rem;display:none}
+.field-error.show{display:block}
+input.invalid,select.invalid{border-color:#c0392b}
+
+@media(max-width:700px){
+  .form-card{padding:2rem 1.5rem}
+  .form-row,.form-row-3{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html" data-t="nav_brand"><img src="images/logo.jpg" alt="Utopia Printing Press logo" class="nav-logo">Utopian Studies</a>
+  <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+  <ul class="nav-links">
+    <li><a href="index.html" data-t="nav_home">Home</a></li>
+    <li><a href="course.html" data-t="nav_course">Course</a></li>
+    <li><a href="about.html" data-t="nav_research">Research</a></li>
+    <li><a href="books.html" data-t="nav_books">Books</a></li>
+    <li><a href="enroll.html" class="nav-enroll active" data-t="nav_enroll">Enroll &rarr;</a></li>
+    <li><button id="lang-toggle-btn" onclick="toggleLang()" class="lang-btn">አማርኛ</button></li>
+  </ul>
+</nav>
+
+<div class="enroll-hero">
+  <div class="section" style="padding-top:0;padding-bottom:0">
+    <div class="enroll-hero-eyebrow" data-t="enroll_eyebrow">Registration</div>
+    <h1 data-t="enroll_title">Register &amp; <em>Enroll</em></h1>
+    <p data-t="enroll_desc">Join a growing community of students exploring utopian thought in the Bible with Dr. Mmeskerem Lechisa.</p>
+  </div>
+</div>
+<div class="gold-divider"></div>
+
+<div class="form-section">
+  <div class="form-wrap">
+    <div class="form-card">
+
+      <!-- Success message (shown after submit) -->
+      <div class="success-msg" id="success-msg">
+        <div class="success-icon">&#10003;</div>
+        <h2 data-t="success_h2">You are enrolled!</h2>
+        <p>Thank you for registering. You are now part of the Utopian Studies community.<br>
+        Check your email for confirmation and course access details.</p>
+      </div>
+
+      <!-- The form -->
+      <div id="form-body">
+        <div class="required-note" data-t="req_note"><span>*</span> Required fields</div>
+
+        <!-- Name row -->
+        <div class="form-row-3">
+          <div>
+            <label for="first_name" data-t="lbl_first">First Name <span class="req">*</span></label>
+            <input type="text" id="first_name" name="first_name" placeholder="Abebe" required autocomplete="given-name">
+            <div class="field-error" id="err-first" data-t="err_first">Please enter your first name</div>
+          </div>
+          <div>
+            <label for="middle_name" data-t="lbl_middle">Middle Name</label>
+            <input type="text" id="middle_name" name="middle_name" placeholder="Girma" autocomplete="additional-name">
+          </div>
+          <div>
+            <label for="last_name" data-t="lbl_last">Last Name <span class="req">*</span></label>
+            <input type="text" id="last_name" name="last_name" placeholder="Kebede" required autocomplete="family-name">
+            <div class="field-error" id="err-last" data-t="err_last">Please enter your last name</div>
+          </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group">
+          <label data-t="lbl_gender">Gender</label>
+          <div class="gender-group">
+            <div class="gender-option">
+              <input type="radio" name="gender" id="gender-male" value="Male">
+              <label class="gender-label" for="gender-male" data-t="lbl_male">&#9794; Male</label>
+            </div>
+            <div class="gender-option">
+              <input type="radio" name="gender" id="gender-female" value="Female">
+              <label class="gender-label" for="gender-female" data-t="lbl_female">&#9792; Female</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Country / City -->
+        <div class="form-row">
+          <div>
+            <label for="country" data-t="lbl_country">Country</label>
+            <input type="text" id="country" name="country" placeholder="Ethiopia" autocomplete="country-name">
+          </div>
+          <div>
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Addis Ababa" autocomplete="address-level2">
+          </div>
+        </div>
+
+        <hr class="form-divider">
+
+        <!-- Contact -->
+        <div class="form-row">
+          <div>
+            <label for="phone" data-t="lbl_phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+251 91 234 5678" autocomplete="tel">
+          </div>
+          <div>
+            <label for="email" data-t="lbl_email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="abebe@email.com" autocomplete="email">
+          </div>
+        </div>
+
+        <button class="submit-btn" id="submit-btn" type="button" onclick="submitForm()">
+          Complete Registration &rarr;
+        </button>
+
+        <p class="form-note" data-t="form_note">
+          Your information is private and will only be used to manage course enrollment.<br>
+          No spam &mdash; ever.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="social-bar">
+  <div class="social-inner">
+    <div class="social-links">
+      <a href="https://www.facebook.com/meskerem.l.debele/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        <span>Facebook</span>
+      </a>
+      <a href="https://www.youtube.com/channel/UCU0HSw0Vh1EhM1_XMR0sj8A" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+        <span>YouTube</span>
+      </a>
+      <a href="https://t.me/Utopiaprintingpress" target="_blank" rel="noopener" class="social-link" aria-label="Telegram Channel">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 7.057l-1.68 7.921c-.125.558-.453.694-.917.432l-2.54-1.873-1.226 1.18c-.135.135-.25.25-.512.25l.183-2.584 4.705-4.25c.204-.183-.045-.283-.316-.1L8.145 14.71l-2.503-.782c-.544-.17-.555-.544.114-.805l9.773-3.768c.453-.163.85.112.4 1.702z"/></svg>
+        <span>Telegram</span>
+      </a>
+      <a href="https://www.researchgate.net/profile/Meskerem-Debele" target="_blank" rel="noopener" class="social-link" aria-label="ResearchGate">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 00-.112.437 8.365 8.365 0 00-.078.53 9 9 0 00-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 00.014 1.017 9 9 0 00.05.727 7.946 7.946 0 00.077.53 3.193 3.193 0 00.113.436c.242.744.65 1.303 1.213 1.68.565.376 1.255.564 2.073.564.737 0 1.398-.148 1.985-.44a3.396 3.396 0 001.388-1.218c.348-.523.521-1.148.521-1.877v-.84H19.63v.84c0 .545-.115.96-.345 1.246-.23.288-.558.43-.985.43-.427 0-.756-.142-.985-.43-.23-.287-.344-.7-.344-1.246V5.368c0-.568.112-.995.336-1.282.225-.287.557-.43.993-.43.427 0 .754.143.985.43.23.287.345.714.345 1.282v.839h1.879v-.84c0-.728-.174-1.353-.521-1.876A3.396 3.396 0 0021.57.44C20.984.148 20.323 0 19.586 0zM1.453 .089v23.823H3.93v-9.913h2.014c.96 0 1.815-.19 2.56-.566a4.116 4.116 0 001.742-1.63c.416-.706.624-1.548.624-2.523 0-.975-.208-1.817-.624-2.523A4.116 4.116 0 007.504.657C6.759.281 5.904.089 4.944.089zm2.478 2.014h.933c.883 0 1.578.228 2.085.684.506.456.76 1.09.76 1.903 0 .812-.254 1.446-.76 1.902-.507.456-1.202.684-2.085.684H3.93z"/></svg>
+        <span>ResearchGate</span>
+      </a>
+      <a href="https://www.goodreads.com/author/show/22308841.Dr_Meskerem_Lechissa" target="_blank" rel="noopener" class="social-link" aria-label="Goodreads">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.43 23.992c-2.111 0-3.998-.498-5.661-1.494a10.392 10.392 0 01-3.846-4.035C.975 16.95.5 15.124.5 13.007c0-2.145.472-4.026 1.415-5.644.942-1.617 2.234-2.88 3.875-3.787C7.431 2.67 9.306 2.216 11.43 2.216c2.111 0 3.993.458 5.647 1.374 1.654.917 2.945 2.18 3.875 3.787.93 1.608 1.395 3.43 1.395 5.467 0 2.118-.465 3.994-1.395 5.628-.93 1.635-2.22 2.912-3.875 3.828-1.654.917-3.536 1.375-5.647 1.375v.317zm-.26-3.83c1.39 0 2.61-.33 3.663-.99 1.053-.66 1.862-1.573 2.427-2.738.565-1.165.847-2.487.847-3.968 0-1.497-.28-2.82-.847-3.968-.565-1.148-1.374-2.053-2.427-2.713-1.053-.66-2.274-.99-3.663-.99-1.39 0-2.61.33-3.663.99C6.454 7.124 5.645 8.03 5.08 9.177c-.565 1.148-.848 2.47-.848 3.968 0 1.481.283 2.803.848 3.968.565 1.165 1.374 2.077 2.427 2.738 1.053.66 2.274.99 3.663.99z"/></svg>
+        <span>Goodreads</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand"><img src="images/logo.jpg" alt="Utopia Printing Press logo" class="footer-logo"><span data-t="nav_brand">Utopian Studies</span></div>
+  <p data-t="footer_sub">Video lessons and resources from Dr. Mmeskerem Lechisa</p>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/lang.js"></script>
+<script>
+// -------------------------------------------------------
+// REPLACE THIS URL with your Google Apps Script Web App URL
+// (see README for setup instructions)
+// -------------------------------------------------------
+var SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+
+// Update placeholders and button on lang change
+document.addEventListener('DOMContentLoaded', function(){
+  function updateFormLang(){
+    var keys = ['first_name','middle_name','last_name','country','phone','email'];
+    var tkeys = ['ph_first','ph_middle','ph_last','ph_country','ph_phone','ph_email'];
+    keys.forEach(function(id,i){ var el=document.getElementById(id); if(el) el.placeholder=t(tkeys[i]); });
+    var btn=document.getElementById('submit-btn'); if(btn && !btn.disabled) btn.textContent=t('submit_btn');
+    var si=document.querySelector('.success-icon'); if(si) si.textContent=t('success_icon');
+    var sp=document.querySelector('.success-msg p'); if(sp) sp.innerHTML=t('success_p');
+  }
+  updateFormLang();
+  var origApply = window.applyLang;
+  window.applyLang = function(lang){ if(origApply) origApply(lang); updateFormLang(); };
+});
+
+function submitForm() {
+  var btn = document.getElementById('submit-btn');
+  var valid = true;
+
+  // Validate required fields
+  var firstName = document.getElementById('first_name').value.trim();
+  var lastName = document.getElementById('last_name').value.trim();
+
+  if (!firstName) {
+    document.getElementById('first_name').classList.add('invalid');
+    document.getElementById('err-first').classList.add('show');
+    valid = false;
+  } else {
+    document.getElementById('first_name').classList.remove('invalid');
+    document.getElementById('err-first').classList.remove('show');
+  }
+
+  if (!lastName) {
+    document.getElementById('last_name').classList.add('invalid');
+    document.getElementById('err-last').classList.add('show');
+    valid = false;
+  } else {
+    document.getElementById('last_name').classList.remove('invalid');
+    document.getElementById('err-last').classList.remove('show');
+  }
+
+  if (!valid) return;
+
+  // Gather data
+  var gender = document.querySelector('input[name="gender"]:checked');
+  var data = {
+    first_name:   firstName,
+    middle_name:  document.getElementById('middle_name').value.trim(),
+    last_name:    lastName,
+    gender:       gender ? gender.value : '',
+    country:      document.getElementById('country').value.trim(),
+    city:         document.getElementById('city').value.trim(),
+    phone:        document.getElementById('phone').value.trim(),
+    email:        document.getElementById('email').value.trim(),
+    submitted_at: new Date().toISOString()
+  };
+
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  // Submit via hidden iframe to avoid CORS issues with Google Apps Script
+  var iframe = document.getElementById('submit-iframe');
+  if (!iframe) {
+    iframe = document.createElement('iframe');
+    iframe.id = 'submit-iframe';
+    iframe.name = 'submit-iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+  }
+
+  var hiddenForm = document.createElement('form');
+  hiddenForm.method = 'POST';
+  hiddenForm.action = SCRIPT_URL;
+  hiddenForm.target = 'submit-iframe';
+  hiddenForm.style.display = 'none';
+
+  Object.keys(data).forEach(function(key) {
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = key;
+    input.value = data[key];
+    hiddenForm.appendChild(input);
+  });
+
+  document.body.appendChild(hiddenForm);
+
+  iframe.onload = function() {
+    document.getElementById('form-body').style.display = 'none';
+    document.getElementById('success-msg').classList.add('show');
+    window.scrollTo(0, 0);
+    document.body.removeChild(hiddenForm);
+  };
+
+  // Fallback: show success after 3 seconds
+  setTimeout(function() {
+    if (document.getElementById('form-body').style.display !== 'none') {
+      document.getElementById('form-body').style.display = 'none';
+      document.getElementById('success-msg').classList.add('show');
+      window.scrollTo(0, 0);
+    }
+  }, 3000);
+
+  hiddenForm.submit();
+}
+
+// Clear validation on input
+['first_name','last_name'].forEach(function(id) {
+  document.getElementById(id).addEventListener('input', function() {
+    this.classList.remove('invalid');
+    document.getElementById('err-' + id.split('_')[0]).classList.remove('show');
+  });
+});
+</script>
+</body>
+</html>
