@@ -1,3 +1,4 @@
+
 // ============================================================
 // Utopian Studies — Bilingual Language System (EN / AM)
 // ============================================================
@@ -101,20 +102,15 @@ var translations = {
     about_p1:     'Dr. Mmeskerem Lechisa is an interdisciplinary scholar whose work spans theology, history, and education — with a particular focus on utopian thought and its manifestations in the Bible and Ethiopian intellectual history.',
     about_p2:     'Her courses bring together classical utopian literature, biblical scholarship, and the rich cultural traditions of Ethiopia into a unified framework for understanding ideals of justice, community, and the good society.',
     about_h3_2:   'Selected Publications',
-    pub_1_title:  'The Ethiopian Root of Thomas More's Utopia',
-    pub_1_meta:   'Article &middot; January 2016 &middot; ResearchGate',
-    pub_2_title:  'Ethiopian Environmental Education from a Utopian Perspective',
-    pub_2_meta:   'A comparative study of two children's outlooks &middot; University of Cincinnati',
-    pub_3_title:  'Curriculum as Unquestioned Hegemony',
-    pub_3_meta:   'Bahir Dar Journal of Education &middot; Vol. 17 No. 1, 2017',
-    pub_4_title:  'Views of Nature, the Environment and the Human-Nature Relationships in Ethiopian Primary School Textbooks',
-    pub_4_meta:   'Bahir Dar University &middot; Department of Teacher Education and Curriculum Studies',
-    pub_5_title:  'Societal and Cultural Norms that Expose Children to Early Alcohol Use in Amhara Region',
-    pub_5_meta:   'Article &middot; February 2023 &middot; Bahir Dar University',
+    pub_1_title:  'Utopian Thought in the Ethiopian Biblical Tradition',
+    pub_1_meta:   'Research publication — available via course materials',
+    pub_2_title:  'Blueprint Societies: From Thomas More to the Habesha Imagination',
+    pub_2_meta:   'Interdisciplinary study in theology &amp; civilization',
+    pub_3_title:  'Education, Identity, and the Utopian Vision',
+    pub_3_meta:   'Essay on pedagogy and cultural utopianism',
     portrait_cap: 'Dr. Mmeskerem Lechisa',
 
     // BOOKS PAGE
-    books_by_dr:  'Books by Dr. Meskerem Lechissa',
     books_label:  'Recommended Reading',
     books_title:  'Books &amp; <em>Texts</em>',
     book_3_title: 'Course Reader',
@@ -246,20 +242,15 @@ var translations = {
     about_p1:     'ዶ/ር ምስከረም ለቺሳ ሥነ-መለኮትን፣ ታሪክን እና ትምህርትን የሚዳስስ ሁለ-ዘርፍ ምሁር ናቸው — ዋና ትኩረታቸው በቅዱሳን ጽሑፎች እና በኢትዮጵያ የምሁር ታሪክ ውስጥ ያለ የዩቶፕያ አስተሳሰብ ነው።',
     about_p2:     'ትምህርቶቻቸው ክላሲካዊ የዩቶፕያ ሥነ-ጽሑፍ፣ የቅዱሳን ጽሑፍ ምርምር እና የኢትዮጵያን ባህላዊ ወጎች አዋህደው ስለ ፍትሕ፣ ማህበረሰብ እና መልካም ኅብረተሰብ ሃሳቦችን ያቀርባሉ።',
     about_h3_2:   'ጥቂት ጽሑፎች',
-    pub_1_title:  'የቶማስ ሞር ዩቶፒያ ኢትዮጵያዊ ሥር',
-    pub_1_meta:   'ጽሑፍ &middot; ጥር 2016 &middot; ResearchGate',
-    pub_2_title:  'ከዩቶፕያ አንፃር ኢትዮጵያዊ የአካባቢ ትምህርት',
-    pub_2_meta:   'የሁለት ልጆች አመለካከት ንፅፅር ጥናት &middot; የሲንሲናቲ ዩኒቨርሲቲ',
-    pub_3_title:  'ሳይጠየቅ የቀረ ሄጌሞኒ ሆኖ ያለ ሥርዓተ-ትምህርት',
-    pub_3_meta:   'የባህርዳር ትምህርት ጆርናል &middot; ቁ. 17 ቁጥር 1፣ 2017',
-    pub_4_title:  'በኢትዮጵያ ቀዳሚ ትምህርት ቤት መጻሕፍት ውስጥ ያለ የተፈጥሮ እና አካባቢ አመለካከት',
-    pub_4_meta:   'የባህርዳር ዩኒቨርሲቲ &middot; የመምህር ትምህርት እና ሥርዓተ-ትምህርት ጥናት ክፍል',
-    pub_5_title:  'በአማራ ክልል ልጆችን ለቀደምት አልኮል አጠቃቀም የሚዳርጉ ማህበራዊ ደንቦች',
-    pub_5_meta:   'ጽሑፍ &middot; የካቲት 2023 &middot; የባህርዳር ዩኒቨርሲቲ',
+    pub_1_title:  'በኢትዮጵያ መጽሐፍ ቅዱሳዊ ወግ ውስጥ ያለ የዩቶፕያ አስተሳሰብ',
+    pub_1_meta:   'የምርምር ጽሑፍ — በትምህርት ቁሳቁስ ይገኛል',
+    pub_2_title:  'ሃሳባዊ ማህበረሰቦች፡ ከቶማስ ሞር እስከ ሐበሻ ምናብ',
+    pub_2_meta:   'በሥነ-መለኮት እና ሥልጣኔ ውስጥ ሁለ-ዘርፍ ጥናት',
+    pub_3_title:  'ትምህርት፣ ማንነት እና የዩቶፕያ ራዕይ',
+    pub_3_meta:   'ስለ ትምህርት ዘዴ እና ባህላዊ ዩቶፒያኒዝም ድርሰት',
     portrait_cap: 'ዶ/ር ምስከረም ለቺሳ',
 
     // BOOKS PAGE
-    books_by_dr:  'የዶ/ር ምስከረም ለቺሳ መጻሕፍት',
     books_label:  'የሚመከሩ ንባቦች',
     books_title:  'መጻሕፍት እና <em>ጽሑፎች</em>',
     book_3_title: 'የትምህርት ንባብ',
